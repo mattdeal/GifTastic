@@ -1,12 +1,7 @@
-var defaultTopics = 'Soccer,Running,My Little Pony,Cats,Bacon,Chickens'.split(',');
+var topics = 'Soccer,Running,My Little Pony,Cats,Bacon,Chickens'.split(',');
 
 $(document).ready(function() {
-	var buttonList = $('#buttonList');
-
-	for (i in defaultTopics) {
-		var button = makeButton(defaultTopics[i]);
-		buttonList.append(button);
-	}
+	makeButtons();
 
 	// submit button click handler
 	$('#submit').on('click', function(event) {
@@ -15,8 +10,9 @@ $(document).ready(function() {
 		var test = $('#newTopic').val().trim();
 
 		if (test !== '') {
-			$('#buttonList').append(makeButton(test));
 			$('#newTopic').val('');
+			topics.push(test);
+			makeButtons();
 		}
 		
 		return false;
@@ -60,7 +56,7 @@ $(document).on("click",".btn-topic",function() {
     			.append(img)
     			.append(rating);
 
-    		$('#imageList').append(imgDiv);
+    		$('#imageList').prepend(imgDiv);
     	}
     })
     .error(function(response) {
@@ -79,6 +75,16 @@ $(document).on('click', '.img-gif', function() {
 			.attr('src', img.attr('data-still'));
 	}
 });
+
+function makeButtons() {
+	var buttonList = $('#buttonList');
+	buttonList.empty();
+
+	for (i in topics) {
+		var button = makeButton(topics[i]);
+		buttonList.append(button);
+	}
+}
 
 function makeButton(text) {
 	var button = $('<button>')
