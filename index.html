@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>GifTastic</title>
-	<link rel="stylesheet" type="text/css" href="assets/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script
 		src="http://code.jquery.com/jquery-2.2.4.min.js"
   		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -12,6 +12,32 @@
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
 </head>
 <body>
-
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="well" id="buttonList">
+				
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sx-12 col-sm-12 col-md-9">
+			<div class="well" id="imageList"></div>
+		</div>
+		<div class="col-sx-12 col-sm-12 col-md-3">
+			<div class="well">
+				<form>
+					<fieldset>
+						<div class="form-group">
+							<label class="control-label" for="newTopic">Add a topic</label>
+							<input class="form-control" type="text" id="newTopic">
+						</div>
+						<button id="submit" class="btn btn-primary">Submit</button>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>
